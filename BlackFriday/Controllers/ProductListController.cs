@@ -17,6 +17,5 @@ namespace BlackFriday.Controllers
         {
             return new string[] { "Windows Phone", "BlackBerry" };
         }
-        
     }
 }
