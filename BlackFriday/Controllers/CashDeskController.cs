@@ -30,6 +30,7 @@ namespace BlackFriday.Controllers
             return new string[] { "value1", "value2" };
         }
         [HttpGet]
+        [Route("{id:int}")]
         public string Get(int id)
         {
 
