@@ -1,41 +1,61 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using ProductServiceLocal.BusinessLogic;
+using ProductServiceLocal.Models;
+using System.Threading.Tasks;
 
 namespace ProductServiceLocal.Controllers
 {
     [Route("api/[controller]")]
     public class ProductsController : Controller
     {
-        // GET api/Products
+        private static ProductBl _productBl = new ProductBl();
+
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<IActionResult> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(await _productBl.GetProducts());
         }
 
-        // GET api/Products/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet]
+        [Route("{id:int}")]
+        public async Task<IActionResult> Get(int id)
         {
-            return "value";
+            Product result = await _productBl.GetProductById(id);
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            return NotFound();
         }
 
-        // POST api/Products
         [HttpPost]
-        public void Post([FromBody]string value)
+        public async Task<IActionResult> Post([FromBody]Product product)
         {
+            int id = await _productBl.CreateProduct(product);
+            return CreatedAtAction("Get", new { id = id });
         }
 
-        // PUT api/Products/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody]Product product)
         {
+            int? resultId = await _productBl.UpdateProductById(product);
+            if(resultId != null)
+            {
+                return Ok();
+            }
+            return NotFound();
         }
 
-        // DELETE api/Products/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int id)
         {
+            int? resultId = await _productBl.DeleteProductById(id);
+            if (resultId != null)
+            {
+                return Ok();
+            }
+            return NotFound();
         }
     }
 }

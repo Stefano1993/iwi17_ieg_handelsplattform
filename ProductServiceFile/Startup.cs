@@ -22,7 +22,7 @@ namespace ProductServiceFile
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "IEGEasyCreditCardService API", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "ProductServiceFile API", Version = "v1" });
             });
         }
 
@@ -38,7 +38,7 @@ namespace ProductServiceFile
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "IEGEasyCreditCardService API");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProductServiceFile API");
             });
 
             app.UseMvc();
