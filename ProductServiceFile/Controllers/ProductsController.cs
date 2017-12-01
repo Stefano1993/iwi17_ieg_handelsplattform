@@ -1,23 +1,38 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using ProductServiceFile.BusinessLogic;
+using ProductServiceFile.Models;
+using System.Threading.Tasks;
 
 namespace ProductServiceFile.Controllers
 {
     [Route("api/[controller]")]
     public class ProductsController : Controller
     {
-        // GET api/Products
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private static ProductBl _productBl;
+        private IConfiguration _configuration;
+
+        public ProductsController(IConfiguration configuration)
         {
-            return new string[] { "value1", "value2" };
+            _productBl = new ProductBl(configuration);
         }
 
-        // GET api/Products/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet]
+        public async Task<IActionResult> Get()
         {
-            return "value";
+            return Ok(await _productBl.GetProducts());
+        }
+
+        [HttpGet]
+        [Route("{id:int}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            Product result = await _productBl.GetProductById(id);
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            return NotFound();
         }
     }
 }
