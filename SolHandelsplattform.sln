@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlackFriday", "BlackFriday\BlackFriday.csproj", "{55A97260-70B7-490A-9578-7BFC58C9B3D6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IEGEasyCreditCardService", "IEGEasyCreditCardService\IEGEasyCreditCardService.csproj", "{2E7B89A5-C69E-4D82-AD7F-25F49789B557}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductServiceLocal", "ProductServiceLocal\ProductServiceLocal.csproj", "{B67CD5DE-05D5-4626-9B71-9EB553A6D81F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductServiceLocal", "ProductServiceLocal\ProductServiceLocal.csproj", "{B67CD5DE-05D5-4626-9B71-9EB553A6D81F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductServiceFile", "ProductServiceFile\ProductServiceFile.csproj", "{358966B2-00BD-42A8-AB46-11C4979D1C9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductServiceFile", "ProductServiceFile\ProductServiceFile.csproj", "{358966B2-00BD-42A8-AB46-11C4979D1C9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentService", "PaymentService\PaymentService.csproj", "{EFD8052A-C873-4A77-BBD4-218041167926}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{358966B2-00BD-42A8-AB46-11C4979D1C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{358966B2-00BD-42A8-AB46-11C4979D1C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{358966B2-00BD-42A8-AB46-11C4979D1C9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFD8052A-C873-4A77-BBD4-218041167926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFD8052A-C873-4A77-BBD4-218041167926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFD8052A-C873-4A77-BBD4-218041167926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFD8052A-C873-4A77-BBD4-218041167926}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
