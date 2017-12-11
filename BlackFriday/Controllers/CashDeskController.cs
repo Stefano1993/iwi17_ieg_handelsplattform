@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BlackFriday.Models;
 using System.Net.Http.Headers;
 using System.Net.Http;
+using BlackFriday.Interfaces;
+using BlackFriday.Dal;
 
 namespace BlackFriday.Controllers
 {
@@ -18,10 +17,12 @@ namespace BlackFriday.Controllers
 
         private readonly ILogger<CashDeskController> _logger;
         private static readonly string creditcardServiceBaseAddress="http://iegeasycreditcardservice.azurewebsites.net/";
+        private ISoldStatisticDal _statisticsDal;
 
         public CashDeskController(ILogger<CashDeskController> logger)
         {
             _logger = logger;
+            _statisticsDal = new SoldStatisticDal();
         }
         [HttpGet]
         public IEnumerable<string> Get()
@@ -57,8 +58,16 @@ namespace BlackFriday.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HttpResponseMessage response =  client.PostAsJsonAsync(creditcardServiceBaseAddress + "/api/CreditcardTransactions", creditCardTransaction).Result;
             response.EnsureSuccessStatusCode();
-           
-            
+
+            ISell sell = new Sell
+            {
+                Amount = basket.AmountInEuro,
+                Date = DateTimeOffset.Now,
+                Product = basket.Product,
+                Vendor = basket.Vendor
+            };
+            int id = _statisticsDal.AddSell(sell);
+
             return CreatedAtAction("Get", new { id = System.Guid.NewGuid() });
         }
     }
