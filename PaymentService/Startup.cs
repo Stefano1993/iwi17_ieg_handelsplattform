@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using PaymentService.CSVFormatter;
 using Microsoft.Net.Http.Headers;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace PaymentService
 {
@@ -31,7 +26,12 @@ namespace PaymentService
                     options.InputFormatters.Insert(0, new CsvInputFormatter());
                     options.OutputFormatters.Insert(0, new CsvOutputFormatter());
                     options.FormatterMappings.SetMediaTypeMappingForFormat("csv", MediaTypeHeaderValue.Parse("text/csv"));
-                }).AddXmlSerializerFormatters(); 
+                }).AddXmlSerializerFormatters();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "ProductServiceFile API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +41,13 @@ namespace PaymentService
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProductServiceFile API");
+            });
 
             app.UseMvc();
         }
