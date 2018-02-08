@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ProductServiceLocal.BusinessLogic;
 using ProductServiceLocal.Models;
 using System.Threading.Tasks;

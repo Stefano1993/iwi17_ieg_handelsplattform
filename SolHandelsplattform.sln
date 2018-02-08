@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlackFriday", "BlackFriday\BlackFriday.csproj", "{55A97260-70B7-490A-9578-7BFC58C9B3D6}"
 EndProject
@@ -15,9 +15,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentService", "PaymentSe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecretService", "SecretService\SecretService.csproj", "{FD27CCBE-ABA5-4F00-9A69-5A3A6E45E04D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationService", "EvaluationService\EvaluationService.csproj", "{EC6AE11A-A31D-4076-9914-C68CC333986D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvaluationService", "EvaluationService\EvaluationService.csproj", "{EC6AE11A-A31D-4076-9914-C68CC333986D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublishService", "PublishService\PublishService.csproj", "{C8C5D36D-BE57-4596-97BC-D747F934B39E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublishService", "PublishService\PublishService.csproj", "{C8C5D36D-BE57-4596-97BC-D747F934B39E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageService", "StorageService\StorageService.csproj", "{7291A6FE-858F-4ABC-8FE4-543083AE6EA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationService", "ConfigurationService\ConfigurationService.csproj", "{3318EBAA-85D2-457D-98C3-6A9139160DF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreationService", "CreationService\CreationService.csproj", "{C826340A-31C9-4CF8-9256-0B4F9C62126B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +63,18 @@ Global
 		{C8C5D36D-BE57-4596-97BC-D747F934B39E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8C5D36D-BE57-4596-97BC-D747F934B39E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8C5D36D-BE57-4596-97BC-D747F934B39E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7291A6FE-858F-4ABC-8FE4-543083AE6EA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7291A6FE-858F-4ABC-8FE4-543083AE6EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7291A6FE-858F-4ABC-8FE4-543083AE6EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7291A6FE-858F-4ABC-8FE4-543083AE6EA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3318EBAA-85D2-457D-98C3-6A9139160DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3318EBAA-85D2-457D-98C3-6A9139160DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3318EBAA-85D2-457D-98C3-6A9139160DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3318EBAA-85D2-457D-98C3-6A9139160DF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C826340A-31C9-4CF8-9256-0B4F9C62126B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C826340A-31C9-4CF8-9256-0B4F9C62126B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C826340A-31C9-4CF8-9256-0B4F9C62126B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C826340A-31C9-4CF8-9256-0B4F9C62126B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
